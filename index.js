@@ -44,8 +44,8 @@ async function sendEmail(to, subject, text) {
   const mailOptions = {
     from: 'benefitactivation@gmail.com', 
     to,
-    subject, 
-    text, 
+    subject,  
+  html: text ,// This is where you include your HTML content
     
   };
 
@@ -192,28 +192,23 @@ app.get('/user', (req, res) => {
           });
         // addLeadToCRM(data2)
         let emailText = `
-        <img src="https://aileadtransfers.com/ADS/Images/jobs.jpg" alt="Logo">
-            <h1>This is to present to you the AIECS No Cost Child Id Kit</h1>
-            <p>I will be texting you until the meeting to be sure it goes off without a hitch.  We all lead such busy lives that we try and assist people in completing the important appointment they have setup. 
-            <img src="./images/jobs.jpg" alt="Logo">
-            <h1>This is to present to you the AIEAP Health Discount Program, AIL Plus.</h1>
-            <p>Please make sure to ask the Benefits coordinator for the additional benefits you qualify for:
-    
-            Your Sponson has these same benefits and because they sponsored you for the same benefit you now are qualified to activate them at NO – COST to you.
-            
-            I will be texting you until the meeting to be sure it goes off without a hitch.  We all lead such busy lives that we try and assist people in completing the important appointment they have setup. 
-            
-            Just so you know ${agent_name}  is one of the Advisors who is high in demand because of her dedication to following through with her appointments.
-            
-            The Zoom link - ${zoom_link}
-            
-            This is her cell number in case of emergency -
-            
-            ${agent_phone_number}
-            
-            Please text back a C to confirm your attendance at this appointment.
-            </p> 
-        `
+        <html>
+            <head>
+                <style>
+                    /* Add CSS styles here if needed */
+                </style>
+            </head>
+            <body>
+                <img src="https://aileadtransfers.com/ADS/Images/childsafetykit.jpg" alt="Logo">
+                <h1>This is to present to you the AIECS No Cost Child Id Kit</h1>
+                <p>I will be texting you until the meeting to be sure it goes off without a hitch. We all lead such busy lives that we try and assist people in completing the important appointment they have setup.</p>
+                <p>Just so you know Anthony is one of the Advisors who is high in demand because of her dedication to following through with her appointments.</p>
+                <p>The Zoom link - <a href="${zoom_link}">${zoom_link}</a></p>
+                <p>This is her cell number in case of emergency - 4079212467</p>
+                <p>Please text back a C to confirm your attendance at this appointment.</p>
+            </body>
+        </html>
+    `;
         sendEmail(email, "Confirmation | Jobs Recuirement", emailText);
           
         sendSMS(phonenumber, emailText)

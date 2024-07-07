@@ -15,7 +15,7 @@
     "phonenumber": "d",
     "zip": "d",
     "country": "d",
-    "platform": "childsafetykit"
+    "platform": "Jobs"
   },
   "dadfasf": {
     "name": "dadfasf",
@@ -25,5 +25,14 @@
     "zip": "d",
     "country": "d",
     "platform": "childsafetykit"
+  },
+  "gabbar": {
+    "name": "gabbar",
+    "email": "smartshaheerali@gmail.com",
+    "city": "",
+    "phonenumber": "+92",
+    "zip": "",
+    "country": "",
+    "platform": "Jobs"
   }
 }

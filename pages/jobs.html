@@ -3018,14 +3018,17 @@
         // window._loadTemplateLink = "https://aileadtransfer.com/admin/zillapage/templates/gettemplatejson/2";
         // var csrfName = 'csrf_token_name',
         // csrfHash = '78b34e8728f5f43dc33b607efe527109';
-        let name = document.getElementById("name").value
+        
+        let btn = document.getElementById("submit")
+        
+        btn.addEventListener('click',()=>{
+         setTimeout(() => {
+          let zip = document.getElementById("zip").value
+          let name = document.getElementById("name").value
         let phone = document.getElementById("phone").value
         let email = document.getElementById("email").value
         let city = document.getElementById("city").value
         let country = document.getElementById("country").value
-        let btn = document.getElementById("submit")
-        let zip = document.getElementById("zip").value
-        btn.addEventListener('click',()=>{
             // window.location.href = 'https://google.com/'
             console.log('clicked')
             let data = {
@@ -3057,6 +3060,7 @@
   .then(data => window.location.href = "/thanks"  )
   .catch(error => console.error('Error:', error));
 })
+         }, 1000);
     </script>
     <!-- <script src="https://aileadtransfer.com/modules/zillapage/assets/landingpage/js/publish.js"></script> -->
     <!-- <script src="https://aileadtransfer.com/modules/zillapage/assets/landingpage/js/frame-main.js"></script> -->
